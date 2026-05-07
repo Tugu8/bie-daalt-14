@@ -13,15 +13,17 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install Newman
         run: npm install -g newman newman-reporter-htmlextra
 
+      - name: Install server dependencies
+        run: cd server && npm install
+
       - name: Start API server
-        run: |
-          cd server
-          npm install
-          npm start &
-          sleep 3
+        run: cd server && npm start &
+
+      - name: Wait for server
+        run: sleep 5
 
       - name: Run Newman tests
         run: |

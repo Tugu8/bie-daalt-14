@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Task Tracker</h1>
+      <div id="stats-bar"></div>
+    </header>
+
+    <main>
+      <section class="sidebar">
+        <h2>Шинэ Task</h2>
+        <form id="task-form">
+          <input id="f-title" type="text" placeholder="Гарчиг *" required />
+          <textarea id="f-desc" placeholder="Тайлбар"></textarea>
+          <input id="f-due" type="date" />
+          <select id="f-priority">
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+          </select>
+          <button type="submit">Нэмэх</button>
+        </form>
+
+        <h2>Шүүлт</h2>
+        <input id="search" type="text" placeholder="Хайх..." />
+        <select id="filter-priority">
+          <option value="">Бүх Priority</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+        <select id="filter-status">
+          <option value="">Бүх Status</option>
+          <option value="pending">Pending</option>
+          <option value="done">Done</option>
+        </select>
+        <button id="btn-filter">Хайх</button>
+        <button id="btn-reset">Цэвэрлэх</button>
+      </section>
+
+      <section class="task-list">
+        <div id="tasks"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <h2>Task засах</h2>
+      <input id="e-title" type="text" placeholder="Гарчиг *" required />
+      <textarea id="e-desc" placeholder="Тайлбар"></textarea>
+      <input id="e-due" type="date" />
+      <select id="e-priority">
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+        <option value="low">Low</option>
+      </select>
+      <select id="e-status">
+        <option value="pending">Pending</option>
+        <option value="done">Done</option>
+      </select>
+      <div class="modal-actions">
+        <button id="btn-save">Хадгалах</button>
+        <button id="btn-cancel">Болих</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

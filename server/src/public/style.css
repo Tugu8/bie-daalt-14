@@ -1,0 +1,67 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: system-ui, sans-serif; background: #f1f5f9; color: #1e293b; }
+
+.app { max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+header { display: flex; align-items: center; justify-content: space-between;
+  background: #6366f1; color: #fff; padding: 14px 20px; border-radius: 10px; margin-bottom: 16px; }
+header h1 { font-size: 1.3rem; }
+#stats-bar { display: flex; gap: 16px; font-size: .85rem; }
+#stats-bar span { background: rgba(255,255,255,.2); padding: 3px 10px; border-radius: 20px; }
+
+main { display: grid; grid-template-columns: 260px 1fr; gap: 16px; }
+
+.sidebar { background: #fff; border-radius: 10px; padding: 16px;
+  display: flex; flex-direction: column; gap: 10px; align-self: start; }
+.sidebar h2 { font-size: .95rem; color: #6366f1; margin-bottom: 4px; }
+.sidebar input, .sidebar textarea, .sidebar select {
+  width: 100%; padding: 7px 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: .9rem; }
+.sidebar textarea { height: 60px; resize: vertical; }
+.sidebar button { width: 100%; padding: 8px; border: none; border-radius: 6px;
+  background: #6366f1; color: #fff; cursor: pointer; font-size: .9rem; }
+.sidebar button:hover { background: #4f46e5; }
+#btn-reset { background: #94a3b8; margin-top: -6px; }
+#btn-reset:hover { background: #64748b; }
+
+.task-list { display: flex; flex-direction: column; gap: 10px; }
+
+.task-card { background: #fff; border-radius: 10px; padding: 14px 16px;
+  display: flex; align-items: flex-start; gap: 12px;
+  border-left: 4px solid #94a3b8; }
+.task-card.high   { border-color: #ef4444; }
+.task-card.medium { border-color: #f59e0b; }
+.task-card.low    { border-color: #22c55e; }
+.task-card.done   { opacity: .55; }
+
+.task-card .info { flex: 1; }
+.task-card .title { font-weight: 600; margin-bottom: 3px; }
+.task-card .title.done-text { text-decoration: line-through; }
+.task-card .meta  { font-size: .78rem; color: #64748b; }
+.task-card .labels { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.label-chip { font-size: .72rem; padding: 2px 8px; border-radius: 12px; color: #fff; }
+
+.task-card .actions { display: flex; gap: 6px; }
+.task-card button { padding: 5px 10px; border: none; border-radius: 6px;
+  cursor: pointer; font-size: .8rem; }
+.btn-done   { background: #22c55e; color: #fff; }
+.btn-edit   { background: #6366f1; color: #fff; }
+.btn-delete { background: #ef4444; color: #fff; }
+
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,.4);
+  display: flex; align-items: center; justify-content: center; z-index: 100; }
+.modal.hidden { display: none; }
+.modal-box { background: #fff; border-radius: 12px; padding: 24px;
+  width: 340px; display: flex; flex-direction: column; gap: 10px; }
+.modal-box h2 { color: #6366f1; margin-bottom: 4px; }
+.modal-box input, .modal-box textarea, .modal-box select {
+  width: 100%; padding: 7px 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: .9rem; }
+.modal-box textarea { height: 70px; resize: vertical; }
+.modal-actions { display: flex; gap: 8px; }
+.modal-actions button { flex: 1; padding: 8px; border: none; border-radius: 6px;
+  cursor: pointer; font-size: .9rem; }
+#btn-save   { background: #6366f1; color: #fff; }
+#btn-cancel { background: #94a3b8; color: #fff; }
+
+#tasks:empty::after { content: 'Task байхгүй байна.'; color: #94a3b8;
+  display: block; text-align: center; padding: 40px; }
