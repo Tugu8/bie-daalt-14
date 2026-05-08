@@ -1,7 +1,7 @@
 # Part A — Setup
 
 ## Selected API
-**Personal Task Tracker API** (Бие даалт 11 — Хувилбар 2)
+**Personal Task Tracker API** (Хувилбар 3 — Өөрийн Express сервер)
 
 ## Brief
 Node.js + Express + SQLite дээр суурилсан REST API. Task CRUD, label удирдлага, статистик endpoint-уудтай.
